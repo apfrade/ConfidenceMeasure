@@ -7,8 +7,9 @@ requirements = ["pandas>=0.2", "numpy>=1"]
 
 setuptools.setup(
     name='ConfidenceMeasure',
-    version="0.0.1",
+    version="0.0.2",
     author='Andre Frade',
+    py_modules=['ConfidenceMeasure'],
     author_email="andre.frade@hertford.ox.ac.uk",
     description='Confidence system package for classification models',
     long_description=long_description,
