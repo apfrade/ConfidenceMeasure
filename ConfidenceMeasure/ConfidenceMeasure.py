@@ -109,10 +109,8 @@ def X_update(X, ct, ids, solution, res_dic):
         Updated version of the series containing the examples IDs that could have not been predicted with confidence.
     
     res_dic: dictionary
-        Updated res_dic with confident predictions.
-    '''
+        Updated res_dic with confident predictions.'''
     
-        
     indices = []
     confident_pred = []
     
