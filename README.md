@@ -92,7 +92,9 @@ Dependency installation via conda:
 	
 # Installation
 
-Via pip: (to be filled in)
+Via pip: 
+
+	$ pip install -i https://test.pypi.org/simple/ ConfidenceMeasure
 
 
 # References
