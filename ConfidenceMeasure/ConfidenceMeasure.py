@@ -79,7 +79,7 @@ def confident_guesses_calc(prob, ct, label_dic):
 
 def X_update(X, ct, ids, solution, res_dic):
     
-     ''' A function that identifies the examples that could not be predicted with confidence.
+    ''' A function that identifies the examples that could not be predicted with confidence.
     
     It updates the pool of examples only to those that could not been predicted with confidence.
     

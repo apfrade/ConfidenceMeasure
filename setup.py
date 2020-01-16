@@ -7,7 +7,7 @@ requirements = ["pandas>=0.2", "numpy>=1"]
 
 setuptools.setup(
     name='ConfidenceMeasure',
-    version="0.0.2",
+    version="0.0.3",
     author='Andre Frade',
     py_modules=['ConfidenceMeasure'],
     author_email="andre.frade@hertford.ox.ac.uk",
