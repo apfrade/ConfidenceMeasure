@@ -1,37 +1,29 @@
-# Confidence Measure Tool 
+# Confidence Tool 
 
 ### Introduction  
 
-Here we provide the confidence measure as a ready to use tool that can be wrapped around classification models.  
+Welcome to the confidence tool page.  
 
-The confidence measure enables one to:  
-- increases model robustness  
-- quantify prediction trust  
-- operate a classifier virtually up to any accuracy level  
-
-The confidence measure can be used for one, or ################
-
-When used for several rounds of predictions of decreasing thresholds, the idea is to feed into the next round all the examples that could not be predicted with confidence. The outputs of each round will fall into the prediction confidence interval limited by the threshold of the previous and current round. This allows great descrimination between the confidence of predictions of different examples.  
-
-Nevertheless, a compromise between accuracy and access to answers is required for the achievement of useful results.
+The confidence tool measures how confident a given classifier is about each prediction it makes. This tool can be implemented with a single line of code, and may be applied in a number of ways that will increase the capabilities of your original machine learning model.  
 
 See the [reference](https://pubs.rsc.org/en/content/articlelanding/2020/ce/d0ce00111b#!divAbstract) for more details.
 
 ### Applications  
 
-One could use this approach to:  
+One could use this tool to:  
 - Increase model robustness (by filtering marginal classification events due to noise in data).  
-- Increase model performance and retrieve examples whose prediction confidence is at least x%.  
-- Separate the examples by confidence of their prediction.  
+- Quantify the confidence of each prediction.  
+- Operate the classifier (virtually) up to any accuracy level.   
+- Bin examples according to the confidence of their prediction.  
 - Determine in which confidence interval the prediction of an example falls.  
 
-It can be further used for label propagation.
+The tool is very versatile and may also be used as an ensemble framework, or even as a semi supervised learning for automatic label assigment (self learning).  
 
 ### Limitations  
 
-The model to be used should be a classifier, able to output an array of class probabilities for each example. Currently, the confidence measure relies on the scikit-learn method ***clf.predict_proba()***.   
+This tool is only applicable to **classifiers** that are able to output **class probabilities** for each prediction.  
 
-Thus we recomend you to only use scikit-learn classifiers that have the **predict_proba()** method. Some are:   
+The model to be used should be a classifier, able to output an array of class probabilities for each example. Currently, the confidence measure relies on scikit-learn models with the *predict_proba()* attribute. The majority is listed below:
 
 		sklearn.svm.SVC(probability=True)
 		sklearn.naive_bayes.GaussianNB()
@@ -48,17 +40,17 @@ If your classifier is not from scikit-learn, ensure that it is able to output ar
 
 1. Ensure that you are operating with ***Python 3*** or above.
 
-2. Then install the **dependencies**:  
+2. Install the **dependencies**:  
 
-	Dependency installation via pip:  
-
+	Via pip:  
+	
 	    $ pip install pandas numpy
 
-	Dependency installation via conda:  
-
+	Via conda:  
+	
 	    $ conda install pandas numpy 
 	
-3. Finally install the confidence threshold tool:  
+3. Install the **confidence tool**:  
 
     	$ pip install -i https://test.pypi.org/simple/ ConfidenceMeasure
 
@@ -66,8 +58,7 @@ If your classifier is not from scikit-learn, ensure that it is able to output ar
 ### References
 
 **Please cite:**  
-
-*A. P. Frade, P. McCabe and R. I. Cooper. “Increasing the performance, trustworthiness and practical value of machine learning models: a case study predicting hydrogen bond network dimensionalities from molecular diagrams”. 2020. CrystEngComm. DOI: 10.1039/D0CE00111B* [Reference](https://pubs.rsc.org/en/content/articlelanding/2020/ce/d0ce00111b#!divAbstract) for more details.
+*A. P. Frade, P. McCabe and R. I. Cooper. “Increasing the performance, trustworthiness and practical value of machine learning models: a case study predicting hydrogen bond network dimensionalities from molecular diagrams”. 2020. CrystEngComm. DOI: 10.1039/D0CE00111B* [Reference](https://pubs.rsc.org/en/content/articlelanding/2020/ce/d0ce00111b#!divAbstract)
 
 
 ## Understanding the algorithm   
@@ -84,7 +75,6 @@ This tool can be called in a single line of code and it has 4 inputs: the classi
    You must provide them as a list of tuples.   
     			
 			Eg. [(C:\Desktop\model_1, 0.5)] 
-    
     
    You may be interested in running different scenarios:  
     
@@ -128,3 +118,11 @@ The tool outputs the confidence predictions and the unpredicted examples:
 ## Basic tour
 
 The [Basic Tour](https://github.com/apfrade/ConfidenceMeasure/blob/master/examples/basic_tour.ipynb) will walk you through the use and different application of the confidence tool.
+
+
+For some applications, a compromise between accuracy and access to answers is required for the achievement of useful results.
+
+
+The confidence measure can be used for one, or ################
+
+When used for several rounds of predictions of decreasing thresholds, the idea is to feed into the next round all the examples that could not be predicted with confidence. The outputs of each round will fall into the prediction confidence interval limited by the threshold of the previous and current round. This allows great descrimination between the confidence of predictions of different examples.  
