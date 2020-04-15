@@ -65,7 +65,9 @@ If your classifier is not from scikit-learn, ensure that it is able to output ar
 
 ### References
 
-**Please cite:** [A. P. Frade, P. McCabe and R. I. Cooper. “Increasing the performance, trustworthiness and practical value of machine learning models: a case study predicting hydrogen bond network dimensionalities from molecular diagrams”. 2020. CrystEngComm. DOI: 10.1039/D0CE00111B](https://pubs.rsc.org/en/content/articlelanding/2020/ce/d0ce00111b#!divAbstract)
+**Please cite:** *A. P. Frade, P. McCabe and R. I. Cooper. “Increasing the performance, trustworthiness and practical value of machine learning models: a case study predicting hydrogen bond network dimensionalities from molecular diagrams”. 2020. CrystEngComm. DOI: 10.1039/D0CE00111B*  
+
+[Reference](https://pubs.rsc.org/en/content/articlelanding/2020/ce/d0ce00111b#!divAbstract) for more details.
 
 
 ## Understanding the algorithm   
@@ -76,16 +78,15 @@ This tool can be called in a single line of code and it has 4 inputs: the classi
 
 - model & confidence threshold:
     Model: the absolute path of a pickled file of the model to be used. Eg. C:\Desktop\model_1
-    Confidence threshold: a float between 0 and 1. Eg. 0.5 
+    Confidence threshold: a float between 0 and 1. Eg. 0.5  
     You must provide them as a list of tuples. 
     
-			Eg. [(C:\Desktop\model_1, 0.5)]
-    
+			Eg. [(C:\Desktop\model_1, 0.5)] 
     
     You may be interested in running different scenarios:  
     1. One model with one confidence threshold:                   
     
-			Eg. [(C:\Desktop\model_1, 0.3)]
+			Eg. [(C:\Desktop\model_1, 0.3)] 
     
     2. One model over different round of confidence thresholds:   
     
@@ -93,7 +94,7 @@ This tool can be called in a single line of code and it has 4 inputs: the classi
     
     3. Different models with different confidence thresholds: 
     
-			Eg. [(C:\Desktop\model_1, 0.2), (C:\Desktop\model_2, 0,4)]**  
+			Eg. [(C:\Desktop\model_1, 0.2), (C:\Desktop\model_2, 0,4)] 
 
 - ids:  
     This should be a pandas Series containing the identifiers of the examples to be predicted. This is required, so the algorthim is able to handle the instances that can and cannot be predicted.  
@@ -109,15 +110,9 @@ The tool outputs the confidence predictions and the unpredicted examples:
 - confident_predictions:
     This is a dictionary of the type
     
-    	  $ dict[ct] = [(predicted label, example id), ...] 
+		dict[ct] = [(predicted label, example id), ...] 
 
-    The key of each dictionary entry corresponds to the confidence threshold used, 
-    
-    	  $ dict[ct]
-    
-    Each key is associated with a list of results that the model confidently predicted for that confidence threshold. Each element of that list if a tuple of predicted labels and corresponding example identifiers, 
-    
-    	  $ [(predicted label, example id)]
+    The key *ct* of each dictionary entry corresponds to the confidence threshold used, and its value *[(predicted label, example id)]* is the list of results that the model confidently predicted for that confidence threshold. Each element of that list if a tuple of predicted labels and corresponding example identifiers, *(predicted label, example id)*.
 
 - unpredicted_examples_ids:  
     This is a list of example identifiers for which the model could not make any confident prediction.
@@ -125,4 +120,4 @@ The tool outputs the confidence predictions and the unpredicted examples:
 
 ## Basic tour
 
-The [basic tour](https://github.com/apfrade/ConfidenceMeasure/blob/master/examples/basic_tour.ipynb) will walk you through the use and different application of the confidence tool.
+The [Basic Tour](https://github.com/apfrade/ConfidenceMeasure/blob/master/examples/basic_tour.ipynb) will walk you through the use and different application of the confidence tool.
