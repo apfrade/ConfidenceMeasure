@@ -44,11 +44,11 @@ If your classifier is not from scikit-learn, ensure that it is able to output ar
 
 	Via pip:  
 	
-	    $ pip install pandas numpy
+	    $ pip install pandas numpy matplotlib
 
 	Via conda:  
 	
-	    $ conda install pandas numpy 
+	    $ conda install pandas numpy matplotlib
 	
 3. Install the **confidence tool**:  
 
