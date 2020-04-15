@@ -78,14 +78,16 @@ This tool can be called in a single line of code and it has 4 inputs: the classi
 
 **- model & confidence threshold:**  
     
-    **Model:** the absolute path of a pickled file of the model to be used. Eg. C:\Desktop\model_1  
-    **Confidence threshold:** a float between 0 and 1. Eg. 0.5  
+   **Model:** the absolute path of a pickled file of the model to be used. Eg. C:\Desktop\model_1  
+   **Confidence threshold:** a float between 0 and 1. Eg. 0.5  
     
-    You must provide them as a list of tuples.   
+   You must provide them as a list of tuples.   
     			
 			Eg. [(C:\Desktop\model_1, 0.5)] 
     
-    You may be interested in running different scenarios:  
+    
+   You may be interested in running different scenarios:  
+    
     1. One model with one confidence threshold:                   
     
 			Eg. [(model_1_file_path, ct_1)] 
@@ -97,6 +99,7 @@ This tool can be called in a single line of code and it has 4 inputs: the classi
     3. Different models with different confidence thresholds: 
     
 			Eg. [(model_1_file_path, ct_1), (model_2_file_path, ct_2)] 
+
 
 **- ids:**    
     This should be a pandas Series containing the identifiers of the examples to be predicted. This is required, so the algorthim is able to handle the instances that can and cannot be predicted.  
@@ -110,11 +113,13 @@ This tool can be called in a single line of code and it has 4 inputs: the classi
 The tool outputs the confidence predictions and the unpredicted examples:
 
 **- confident_predictions:**  
-    This is a dictionary of the type
+   This is a dictionary of the type
     
-			dict[ct] = [(predicted label, example id), ...] 
+			dict[ct] = [(predicted label 1, example id 2), (predicted label 2, example id 2), ...] 
 
-    The key *ct* of each dictionary entry corresponds to the confidence threshold used, and its value *[(predicted label, example id)]* is the list of results that the model confidently predicted for that confidence threshold. Each element of that list if a tuple of predicted labels and corresponding example identifiers, *(predicted label, example id)*.
+   *ct* is the key of each dictionary entry and corresponds to the confidence threshold used
+   *[(predicted label, example id)]* is the list of results that the model confidently predicted for that ct. 
+   *(predicted label, example id)* is a tuple of predicted label and corresponding example identifier
 
 **- unpredicted_examples_ids:**    
     This is a list of example identifiers for which the model could not make any confident prediction.
