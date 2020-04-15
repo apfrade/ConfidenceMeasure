@@ -58,6 +58,7 @@ If your classifier is not from scikit-learn, ensure that it is able to output ar
 ### References
 
 **Please cite:**  
+
 *A. P. Frade, P. McCabe and R. I. Cooper. “Increasing the performance, trustworthiness and practical value of machine learning models: a case study predicting hydrogen bond network dimensionalities from molecular diagrams”. 2020. CrystEngComm. DOI: 10.1039/D0CE00111B* 
 
 Access the paper [here](https://pubs.rsc.org/en/content/articlelanding/2020/ce/d0ce00111b#!divAbstract).
