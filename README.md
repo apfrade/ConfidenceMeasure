@@ -1,13 +1,13 @@
-# ConfidenceMeasure  
+# Confidence Measure Tool 
 
 ### Introduction  
 
 Here we provide the confidence measure as a ready to use tool that can be wrapped around classification models.  
 
 The confidence measure enables one to:  
-1. increases model robustness  
-2. quantify prediction trust  
-3. operate a classifier virtually up to any accuracy level  
+	1. increases model robustness  
+	2. quantify prediction trust  
+	3. operate a classifier virtually up to any accuracy level  
 
 The confidence measure can be used for one, or ################
 
@@ -79,22 +79,22 @@ This tool can be called in a single line of code and it has 4 inputs: the classi
 - model & confidence threshold:
     Model: the absolute path of a pickled file of the model to be used. Eg. C:\Desktop\model_1
     Confidence threshold: a float between 0 and 1. Eg. 0.5  
-    You must provide them as a list of tuples. 
+    You must provide them as a list of tuples.   
     
 			Eg. [(C:\Desktop\model_1, 0.5)] 
     
     You may be interested in running different scenarios:  
     1. One model with one confidence threshold:                   
     
-			Eg. [(C:\Desktop\model_1, 0.3)] 
+			Eg. [(model_1_file_path, 0.5)] 
     
     2. One model over different round of confidence thresholds:   
     
-			Eg. [(C:\Desktop\model_1, 0.6), (C:\Desktop\model_1, 0.5)] 
+			Eg. [(model_1_file_path, 0.5), (model_1_file_path, 0.4)] 
     
     3. Different models with different confidence thresholds: 
     
-			Eg. [(C:\Desktop\model_1, 0.2), (C:\Desktop\model_2, 0,4)] 
+			Eg. [(model_1_file_path, 0.5), (model_2_file_path, 0,7)] 
 
 - ids:  
     This should be a pandas Series containing the identifiers of the examples to be predicted. This is required, so the algorthim is able to handle the instances that can and cannot be predicted.  
@@ -110,7 +110,7 @@ The tool outputs the confidence predictions and the unpredicted examples:
 - confident_predictions:
     This is a dictionary of the type
     
-		dict[ct] = [(predicted label, example id), ...] 
+			dict[ct] = [(predicted label, example id), ...] 
 
     The key *ct* of each dictionary entry corresponds to the confidence threshold used, and its value *[(predicted label, example id)]* is the list of results that the model confidently predicted for that confidence threshold. Each element of that list if a tuple of predicted labels and corresponding example identifiers, *(predicted label, example id)*.
 
