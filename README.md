@@ -5,9 +5,9 @@
 Here we provide the confidence measure as a ready to use tool that can be wrapped around classification models.  
 
 The confidence measure enables one to:  
-	1. increases model robustness  
-	2. quantify prediction trust  
-	3. operate a classifier virtually up to any accuracy level  
+- increases model robustness  
+- quantify prediction trust  
+- operate a classifier virtually up to any accuracy level  
 
 The confidence measure can be used for one, or ################
 
@@ -65,9 +65,9 @@ If your classifier is not from scikit-learn, ensure that it is able to output ar
 
 ### References
 
-**Please cite:** *A. P. Frade, P. McCabe and R. I. Cooper. “Increasing the performance, trustworthiness and practical value of machine learning models: a case study predicting hydrogen bond network dimensionalities from molecular diagrams”. 2020. CrystEngComm. DOI: 10.1039/D0CE00111B*  
+**Please cite:**  
 
-[Reference](https://pubs.rsc.org/en/content/articlelanding/2020/ce/d0ce00111b#!divAbstract) for more details.
+*A. P. Frade, P. McCabe and R. I. Cooper. “Increasing the performance, trustworthiness and practical value of machine learning models: a case study predicting hydrogen bond network dimensionalities from molecular diagrams”. 2020. CrystEngComm. DOI: 10.1039/D0CE00111B* [Reference](https://pubs.rsc.org/en/content/articlelanding/2020/ce/d0ce00111b#!divAbstract) for more details.
 
 
 ## Understanding the algorithm   
@@ -76,30 +76,32 @@ If your classifier is not from scikit-learn, ensure that it is able to output ar
 
 This tool can be called in a single line of code and it has 4 inputs: the classifier, the confidence threshold, a list of  identifiers as well as the matrix of descriptors for the examples to be predicted. These should be provided as described below:
 
-- model & confidence threshold:
-    Model: the absolute path of a pickled file of the model to be used. Eg. C:\Desktop\model_1
-    Confidence threshold: a float between 0 and 1. Eg. 0.5  
-    You must provide them as a list of tuples.   
+**- model & confidence threshold:**  
     
+    **Model:** the absolute path of a pickled file of the model to be used. Eg. C:\Desktop\model_1  
+    **Confidence threshold:** a float between 0 and 1. Eg. 0.5  
+    
+    You must provide them as a list of tuples.   
+    			
 			Eg. [(C:\Desktop\model_1, 0.5)] 
     
     You may be interested in running different scenarios:  
     1. One model with one confidence threshold:                   
     
-			Eg. [(model_1_file_path, 0.5)] 
+			Eg. [(model_1_file_path, ct_1)] 
     
     2. One model over different round of confidence thresholds:   
     
-			Eg. [(model_1_file_path, 0.5), (model_1_file_path, 0.4)] 
+			Eg. [(model_1_file_path, ct_1), (model_1_file_path, ct_2)] 
     
     3. Different models with different confidence thresholds: 
     
-			Eg. [(model_1_file_path, 0.5), (model_2_file_path, 0,7)] 
+			Eg. [(model_1_file_path, ct_1), (model_2_file_path, ct_2)] 
 
-- ids:  
+**- ids:**    
     This should be a pandas Series containing the identifiers of the examples to be predicted. This is required, so the algorthim is able to handle the instances that can and cannot be predicted.  
 
-- descriptors:  
+**- descriptors:**    
     This sould be a pandas dataframe containing the descriptor values associated with the examples to be predicted.  
     The nth row of the descriptor table should correspond to the nth identfier in the list of ids.  
 
@@ -107,14 +109,14 @@ This tool can be called in a single line of code and it has 4 inputs: the classi
 
 The tool outputs the confidence predictions and the unpredicted examples:
 
-- confident_predictions:
+**- confident_predictions:**  
     This is a dictionary of the type
     
 			dict[ct] = [(predicted label, example id), ...] 
 
     The key *ct* of each dictionary entry corresponds to the confidence threshold used, and its value *[(predicted label, example id)]* is the list of results that the model confidently predicted for that confidence threshold. Each element of that list if a tuple of predicted labels and corresponding example identifiers, *(predicted label, example id)*.
 
-- unpredicted_examples_ids:  
+**- unpredicted_examples_ids:**    
     This is a list of example identifiers for which the model could not make any confident prediction.
 
 
