@@ -5,17 +5,17 @@
 Here we provide the confidence measure as a ready to use tool that can be wrapped around classification models.  
 
 The confidence measure enables one to:  
-(1) increases model robustness  
-(2) quantify prediction trust  
-(3) operate a classifier virtually up to any accuracy level  
+1. increases model robustness  
+2. quantify prediction trust  
+3. operate a classifier virtually up to any accuracy level  
 
-The confidence measure can be used for one, or \\\\\
+The confidence measure can be used for one, or ################
 
 When used for several rounds of predictions of decreasing thresholds, the idea is to feed into the next round all the examples that could not be predicted with confidence. The outputs of each round will fall into the prediction confidence interval limited by the threshold of the previous and current round. This allows great descrimination between the confidence of predictions of different examples.  
 
 Nevertheless, a compromise between accuracy and access to answers is required for the achievement of useful results.
 
-See the reference for more details.
+See the [reference](https://pubs.rsc.org/en/content/articlelanding/2020/ce/d0ce00111b#!divAbstract) for more details.
 
 ### Applications  
 
@@ -65,9 +65,7 @@ If your classifier is not from scikit-learn, ensure that it is able to output ar
 
 ### References
 
-The reference to this work can be seen [here](https://pubs.rsc.org/en/content/articlelanding/2020/ce/d0ce00111b#!divAbstract).   
-
-**Please cite:** *A. P. Frade, P. McCabe and R. I. Cooper. “Increasing the performance, trustworthiness and practical value of machine learning models: a case study predicting hydrogen bond network dimensionalities from molecular diagrams”. 2020. CrystEngComm. DOI: 10.1039/D0CE00111B*
+**Please cite:** [A. P. Frade, P. McCabe and R. I. Cooper. “Increasing the performance, trustworthiness and practical value of machine learning models: a case study predicting hydrogen bond network dimensionalities from molecular diagrams”. 2020. CrystEngComm. DOI: 10.1039/D0CE00111B](https://pubs.rsc.org/en/content/articlelanding/2020/ce/d0ce00111b#!divAbstract)
 
 
 ## Understanding the algorithm   
@@ -77,31 +75,25 @@ The reference to this work can be seen [here](https://pubs.rsc.org/en/content/ar
 This tool can be called in a single line of code and it has 4 inputs: the classifier, the confidence threshold, a list of  identifiers as well as the matrix of descriptors for the examples to be predicted. These should be provided as described below:
 
 - model & confidence threshold:
-    Model: the absolute path of a pickled file of the model to be used. 
-           
-	   $ Eg. C:\Desktop\model_1
-	   
-    Confidence threshold: a float between 0 and 1. 
-    
-    	   $ Eg. 0.5 
-	   
+    Model: the absolute path of a pickled file of the model to be used. Eg. C:\Desktop\model_1
+    Confidence threshold: a float between 0 and 1. Eg. 0.5 
     You must provide them as a list of tuples. 
     
-    	   $ Eg. [(C:\Desktop\model_1, 0.5)]
+			Eg. [(C:\Desktop\model_1, 0.5)]
+    
     
     You may be interested in running different scenarios:  
-    
     1. One model with one confidence threshold:                   
     
-       	   $ [(C:\Desktop\model_1, 0.3)]
+			Eg. [(C:\Desktop\model_1, 0.3)]
     
     2. One model over different round of confidence thresholds:   
     
-    	   $ [(C:\Desktop\model_1, 0.6), (C:\Desktop\model_1, 0.5)] 
+			Eg. [(C:\Desktop\model_1, 0.6), (C:\Desktop\model_1, 0.5)] 
     
     3. Different models with different confidence thresholds: 
     
-    	   $ [(C:\Desktop\model_1, 0.2), (C:\Desktop\model_2, 0,4)]**  
+			Eg. [(C:\Desktop\model_1, 0.2), (C:\Desktop\model_2, 0,4)]**  
 
 - ids:  
     This should be a pandas Series containing the identifiers of the examples to be predicted. This is required, so the algorthim is able to handle the instances that can and cannot be predicted.  
