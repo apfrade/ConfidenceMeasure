@@ -1,9 +1,10 @@
 # ConfidenceMeasure  
 
-#### Introduction  
+### Introduction  
+
 Here we provide the confidence measure as a ready to use tool that can be wrapped around classification models.  
 
-The confidence measure enables one to: 
+The confidence measure enables one to:  
 (1) increases model robustness  
 (2) quantify prediction trust  
 (3) operate a classifier virtually up to any accuracy level  
@@ -16,7 +17,8 @@ Nevertheless, a compromise between accuracy and access to answers is required fo
 
 See the reference for more details.
 
-#### Applications  
+### Applications  
+
 One could use this approach to:  
 - Increase model robustness (by filtering marginal classification events due to noise in data).  
 - Increase model performance and retrieve examples whose prediction confidence is at least x%.  
@@ -25,52 +27,52 @@ One could use this approach to:
 
 It can be further used for label propagation.
 
-#### Limitations   
+### Limitations  
 
-The model to be used should be a classifier, able to output an array of class probabilities for each example. Currently, the confidence measure relies on the scikit-learn method **clf.predict_proba()**. Thus we recomend you to only use scikit-learn classifiers that have the **predict_proba()** method. Some are:   
+The model to be used should be a classifier, able to output an array of class probabilities for each example. Currently, the confidence measure relies on the scikit-learn method ***clf.predict_proba()***.   
 
+Thus we recomend you to only use scikit-learn classifiers that have the **predict_proba()** method. Some are:   
 
-	sklearn.svm.SVC(probability=True)
-        sklearn.naive_bayes.GaussianNB()
-        sklearn.ensemble.ExtraTreesClassifier()
-        sklearn.ensemble.GradientBoostingClassifier()
-        sklearn.linear_model.SGDClassifier(loss='modified_huber')
-        sklearn.neighbors.KNeighborsClassifier()
-        sklearn.gaussian_process.GaussianProcessClassifier()
+		sklearn.svm.SVC(probability=True)
+		sklearn.naive_bayes.GaussianNB()
+		sklearn.ensemble.ExtraTreesClassifier()
+		sklearn.ensemble.GradientBoostingClassifier()
+		sklearn.linear_model.SGDClassifier(loss='modified_huber')
+		sklearn.neighbors.KNeighborsClassifier()
+		sklearn.gaussian_process.GaussianProcessClassifier()
 	
 If your classifier is not from scikit-learn, ensure that it is able to output arrays of class probabilities for each example. In this case you will also have to change the load_models script in the source code, to accommodate your model.
 
 
 ## Installation   
 
-The code should be run using Python 3 or above.
+1. Ensure that you are operating with ***Python 3*** or above.
 
-Then install the **dependencies**:  
+2. Then install the **dependencies**:  
 
-Dependency installation via pip:  
+	Dependency installation via pip:  
 
-    $ pip install pandas numpy
-    
-Dependency installation via conda:  
+	    $ pip install pandas numpy
 
-    $ conda install pandas numpy 
+	Dependency installation via conda:  
+
+	    $ conda install pandas numpy 
 	
-Finally install the confidence threshold tool:  
+3. Finally install the confidence threshold tool:  
 
-    $ pip install -i https://test.pypi.org/simple/ ConfidenceMeasure
+    	$ pip install -i https://test.pypi.org/simple/ ConfidenceMeasure
 
 
 ### References
 
 The reference to this work can be seen [here](https://pubs.rsc.org/en/content/articlelanding/2020/ce/d0ce00111b#!divAbstract).   
-Please cite: 
 
-*A. P. Frade, P. McCabe and R. I. Cooper. “Increasing the performance, trustworthiness and practical value of machine learning models: a case study predicting hydrogen bond network dimensionalities from molecular diagrams”. 2020. CrystEngComm. DOI: 10.1039/D0CE00111B*
+**Please cite:** *A. P. Frade, P. McCabe and R. I. Cooper. “Increasing the performance, trustworthiness and practical value of machine learning models: a case study predicting hydrogen bond network dimensionalities from molecular diagrams”. 2020. CrystEngComm. DOI: 10.1039/D0CE00111B*
 
 
-#### Understanding the algorithm   
+## Understanding the algorithm   
 
-##### Input:  
+### Input:  
 
 This tool can be called in a single line of code and it has 4 inputs: the classifier, the confidence threshold, a list of  identifiers as well as the matrix of descriptors for the examples to be predicted. These should be provided as described below:
 
@@ -108,7 +110,7 @@ This tool can be called in a single line of code and it has 4 inputs: the classi
     This sould be a pandas dataframe containing the descriptor values associated with the examples to be predicted.  
     The nth row of the descriptor table should correspond to the nth identfier in the list of ids.  
 
-##### Output:  
+### Output:  
 
 The tool outputs the confidence predictions and the unpredicted examples:
 
@@ -129,6 +131,6 @@ The tool outputs the confidence predictions and the unpredicted examples:
     This is a list of example identifiers for which the model could not make any confident prediction.
 
 
-#### Basic tour
+## Basic tour
 
 The [basic tour](https://github.com/apfrade/ConfidenceMeasure/blob/master/examples/basic_tour.ipynb) will walk you through the use and different application of the confidence tool.
