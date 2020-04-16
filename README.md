@@ -1,4 +1,4 @@
-# Confidence Tool 
+﻿# Confidence Tool 
 
 ### Introduction  
 
@@ -54,7 +54,7 @@ If your classifier is not from scikit-learn, ensure that it is able to output ar
 	
 3. Install the **confidence tool**:  
 
-    	$ pip install -i https://test.pypi.org/simple/ ConfidenceMeasure
+    	$ pip install -i https://test.pypi.org/simple/ confidence-tool
 
 
 ### References
