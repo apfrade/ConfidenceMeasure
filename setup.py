@@ -3,15 +3,15 @@ import setuptools
 with open("README.md", "r") as readme_file:
     long_description = readme_file.read()
 
-requirements = ["pandas>=0.2", "numpy>=1"]
+requirements = ["pandas>=0.2", "numpy>=1", matplotlib]
 
 setuptools.setup(
-    name='ConfidenceMeasure',
-    version="0.0.3",
+    name='confidence_tool',
+    version="0.0.4",
     author='Andre Frade',
-    py_modules=['ConfidenceMeasure'],
+    py_modules=['confidence_tool.confidence_tool'],
     author_email="andre.frade@hertford.ox.ac.uk",
-    description='Confidence system package for classification models',
+    description='Confidence tool package for classification models',
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/apfrade/ConfidenceMeasure.git",
