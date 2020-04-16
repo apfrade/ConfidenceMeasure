@@ -3,7 +3,7 @@ import setuptools
 with open("README.md", encoding="utf8") as readme_file:
     long_description = readme_file.read()
 
-requirements = ["pandas>=0.2", "numpy>=1", matplotlib>=3]
+requirements = ["pandas>=0.2", "numpy>=1", "matplotlib>=3"]
 
 setuptools.setup(
     name='confidence_tool',
