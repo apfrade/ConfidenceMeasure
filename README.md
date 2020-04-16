@@ -4,8 +4,8 @@
 
 Welcome to the confidence tool page.  
 
-The confidence tool measures how confident a given classifier is about each prediction it makes. The tool can be implemented with a single line of code, and may be applied in a number of ways that will increase the capabilities of your original machine learning model.    
-If you just like to see how it can be applied in practice, keep reading.  
+The confidence tool measures how confident a given classifier is about each prediction it makes. The tool can be implemented with a single line of code, and may be applied in a number of ways that will increase the capabilities of your original machine learning model.      
+If you just like to see how it can be applied in practice, keep reading and check out our [Basic Tour](https://github.com/apfrade/ConfidenceMeasure/blob/master/examples/basic_tour.ipynb) in a jupyter notebook.
 
 To actually understand how it works, check the [reference](https://pubs.rsc.org/en/content/articlelanding/2020/ce/d0ce00111b#!divAbstract) for more details.  
 
@@ -13,10 +13,12 @@ To actually understand how it works, check the [reference](https://pubs.rsc.org/
 ### Applications  
 
 One could use this tool to:  
-- Quantify the confidence of each prediction.  
-- Increase model robustness, by filtering marginal classification events due to noise in data.  
-- Operate the classifier (virtually) up to any accuracy level.   
-- Bin examples according to the confidence of their prediction.    
+- Quantifying the confidence of each prediction.  
+- Increasing model robustness, by filtering marginal classification events due to noise in data.  
+- Operating the classifier (virtually) up to any accuracy level.   
+- Binning examples according to the confidence of their prediction.    
+
+Check how to achieve each of these applications [here](https://github.com/apfrade/ConfidenceMeasure/blob/master/examples/basic_tour.ipynb).  
 
 The tool is very versatile and may also be used as an ensemble framework, or even as a semi supervised learning strategy for automatic label assigment (self learning).  
 
