@@ -4,8 +4,8 @@
 
 Welcome to the confidence tool page.  
 
-The confidence tool measures how confident a given classifier is about each prediction it makes. The tool can be implemented with a single line of code, and may be applied in a number of ways that will increase the capabilities of your original machine learning model.      
-If you just like to see how it can be applied in practice, keep reading and check out our [Basic Tour](https://github.com/apfrade/ConfidenceMeasure/blob/master/examples/basic_tour.ipynb) in a jupyter notebook.
+The confidence tool measures how confident a given classifier is about each prediction it makes. The tool can be implemented with a single line of code, and may be applied in a number of ways that will increase the capabilities of your original machine learning model.        
+If you just like to see how it can be applied in practice, keep reading and check out our [Basic Tour](https://github.com/apfrade/ConfidenceMeasure/blob/master/examples/basic_tour.ipynb) in a jupyter notebook.  
 
 To actually understand how it works, check the [reference](https://pubs.rsc.org/en/content/articlelanding/2020/ce/d0ce00111b#!divAbstract) for more details.  
 
