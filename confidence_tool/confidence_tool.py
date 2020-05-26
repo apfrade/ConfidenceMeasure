@@ -5,7 +5,7 @@ try:
     import matplotlib.pyplot as plt
 except ImportError:
     raise ImportError(
-        "In order to run the model you must have the libraries: " +
+        "In order to run the confidence tool you must have the libraries: " +
         "`numpy`, `pandas`, and 'pickle' installed.")
 
 def prediction_confidence(model_file_path, X):
